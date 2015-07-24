@@ -1,0 +1,132 @@
+---
+title: "codemogProfile Gallery"
+author: "Rob Kemp"
+date: "July 24, 2015"
+output: html_document
+---
+
+This document shows all of the charting capabilities 
+
+```{r, echo=FALSE}
+suppressMessages(suppressWarnings(library(codemogProfile)))
+setwd("/opt/shiny-server/samples/sample-apps/codemog_data/")
+temp = list.files(pattern="*.rdata")
+myfiles = lapply(temp, load)
+```
+
+##County Map
+
+```{r}
+cp_countymap("011")
+```
+Geographies: County
+
+## ACS Educational Attainment Chart
+```{r}
+ms_ed("011")
+```
+Geographies: County, Place
+
+## ACS Educational Attainment Chart - Fewer Categories
+```{r}
+cp_ed_short("011")
+```
+Geographies: County, Place
+
+This chart was inititally created to use in the OEDIT Blueprints 2.0 slides, but could be good in presentations.
+
+## SDO Industry Change Chart from Peak Employment
+```{r}
+cp_indchange("011", "Bent")
+```
+Geographies: County
+
+## SDO Industry Share Chart
+```{r}
+cp_jobShare("011", "Bent")
+```
+Geographies: County
+
+## SDO Labor Force Age 
+```{r}
+cp_laborforceage("011", "Bent")
+```
+Geographies: County
+
+## BLS Labor Force Size
+```{r}
+cp_laborforcebls("011", "Bent")
+```
+Geographies: County
+
+## Net Migration by Age
+```{r}
+cp_migbyage("011")
+```
+Geographies: County
+
+## Net Migration And New Jobs
+```{r}
+cp_migjobs("011", "Bent")
+```
+Geographies: County
+
+## Group Quarters and Household Population
+```{r}
+cp_popGQ("011", "Bent")
+```
+Geographies: County
+
+## Population and Component Trend Chart
+```{r}
+cp_poptrend("011", "Bent")
+```
+Geographies: County
+
+## Census Age Distribution 2000 and 2010
+```{r}
+ms_census_age("011")
+```
+Geographies: County
+
+## Census Household Types
+```{r}
+ms_hh("011")
+```
+Geographies: County, Place
+
+## Census Housing Tenure Data
+```{r}
+ms_housing("011")
+```
+Geographies: County, Place
+
+## ACS Household Income Distribution
+```{r}
+ms_income("011")
+```
+Geographies: County, Place
+
+## SDO Jobs Time Series
+```{r}
+ms_jobs("011")
+```
+Geographies: County
+
+## ACS Median Household Income Data
+```{r}
+ms_mhi("011")
+```
+Geographies: County, Place
+
+## SDO Projected Population Change by Age, 2015 to 2025
+```{r}
+ms_popage("011")
+```
+Geographies: County
+
+## Census Race Breakdown, 2000 and 2010
+```{r}
+ms_race("011")
+```
+Geographies: County, Place
